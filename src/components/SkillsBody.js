@@ -8,31 +8,32 @@ export default class SkillsBody extends Component {
         this.state = {
             technical: {
                 front: [
-                    { name: "JavaScript", level: 9 },
-                    { name: "TypeScript", level: 9 },
-                    { name: "React", level: 8 },
-                    { name: "Angular", level: 8 },
-                    { name: "R Shiny", level: 8 },
-                    { name: "HTML/CSS", level: 10 },
-                    { name: "npm", level: 8 }
+                    { name: "JavaScript", symbol: "Js", level: 9 },
+                    { name: "TypeScript", symbol: "Ts", level: 9 },
+                    { name: "React", symbol: "Re", level: 8 },
+                    { name: "Angular", symbol: "Ng", level: 8 },
+                    { name: "R Shiny", symbol: "Rs", level: 8 },
+                    { name: "HTML/CSS", symbol: "Ht", level: 10 },
+                    { name: "npm", symbol: "Np", level: 8 }
                 ],
                 back: [
-                    { name: "R", level: 8 },
-                    { name: "SQL", level: 8 },
-                    { name: "Java", level: 7 },
-                    { name: "Node.JS", level: 8 },
-                    { name: "Data Processing & Manipulation", level: 8 }
+                    { name: "R", symbol: "R", level: 8 },
+                    { name: "SQL", symbol: "Ql", level: 8 },
+                    { name: "Java", symbol: "J", level: 7 },
+                    { name: "Node.JS", symbol: "No", level: 8 },
+                    { name: "Data Processing & Manipulation", symbol: "Dm", level: 8 }
                 ]
             },
             professional: [
-                { name: "Teamwork", level: 9 },
-                { name: "Git", level: 8 },
-                { name: "Communication", level: 9 },
-                { name: "Problem Solving", level: 8 },
-                { name: "Initiative", level: 8 },
-                { name: "Project Management", level: 7 }
+                { name: "Teamwork", symbol: "Tw", level: 9 },
+                { name: "Git", symbol: "G", level: 8 },
+                { name: "Communication", symbol: "Co", level: 9 },
+                { name: "Problem Solving", symbol: "Ps", level: 8 },
+                { name: "Initiative", symbol: "In", level: 8 },
+                { name: "Project Management", symbol: "Pm", level: 7 }
             ],
-            show: "front"
+            show: "front",
+            selectedSkill: null
         }
     }
 
@@ -40,7 +41,10 @@ export default class SkillsBody extends Component {
         this.setState({ show: show });
     }
 
-    
+    handleSkillSelect = (selected) => {
+        console.log(selected);
+        this.setState({ selectedSkill: selected })
+    }
 
     renderSkills = () => {
         if (this.props.showTechnicial) {
@@ -56,7 +60,7 @@ export default class SkillsBody extends Component {
                         </h3>
                     </div>
 
-                    {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} index={i} />) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level} index={i} />)}
+                    {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)}/>) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level}  symbol={el.symbol} index={i}  handleSkillSelect={this.handleSkillSelect.bind(this)}/>)}
                 </div>
             )
 
@@ -68,7 +72,7 @@ export default class SkillsBody extends Component {
                         <h3 className="skill-title">Professional</h3>
                     </div>
                     {this.state.professional.map((el, i) => {
-                        return <SkillItem name={el.name} level={el.level} index={i} />
+                        return <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)}/>
                     })}
                 </div>
             )
@@ -82,7 +86,7 @@ export default class SkillsBody extends Component {
                     {this.renderSkills()}
                 </div>
                 <div className="half-page right">
-                    <SkillsDetail />
+                    <SkillsDetail selected={this.state.selectedSkill}/>
                 </div>
             </div>
         )
