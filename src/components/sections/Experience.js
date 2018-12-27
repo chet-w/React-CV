@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import ExperienceBody from '../ExperienceBody';
 
 export default class Experience extends Component {
   render() {
     return (
-      <React.Fragment>
-        <h1>Im experience</h1>
-      </React.Fragment>
+      <div className="container">
+        <h1 className="title">Experience</h1>
+        <div className="section-body experience-body">
+        <ExperienceBody />
+        </div>
+        <div className="hr-line"></div>
+      </div>
+
     )
   }
 }
