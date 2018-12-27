@@ -288,10 +288,25 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 /* Skills Styles */
 
 .skills-body {
-  
+  display: flex;
+  flex-direction: row;
+
+}
+
+.ant-progress-line {
+  width: 0;
+  display: block;
+  animation: grow-right 1s ease forwards;
 }
 
 .ant-progress-success-bg, .ant-progress-bg {
+  background: #93291e;
+  background: -webkit-linear-gradient(to left, #ed213a, #93291e);
+  background: linear-gradient(to left, #ed213a, #93291e); 
+  
+}
+
+.ant-progress-status-success .ant-progress-bg {
   background: #93291e;
   background: -webkit-linear-gradient(to left, #ed213a, #93291e);
   background: linear-gradient(to left, #ed213a, #93291e); 
@@ -303,6 +318,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 
 .options {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .options .ant-switch-checked {
@@ -314,6 +330,67 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 .options .ant-switch {
   margin: 0 30px;
   
+}
+
+.part {
+  width: 100%;
+}
+
+.skills-part {
+  margin-bottom: 30px;
+}
+
+.left {
+  margin-right: 10%;
+  width: 40%;
+}
+
+.right {
+  margin-left: 10%;
+  width: 40%;
+}
+
+.skill-title {
+  margin-bottom: 10px;
+  display: inline;
+}
+
+.divider {
+  margin: 0 10px;
+}
+
+.thick-circle {
+  border: solid 30px #333;
+  border-radius: 50%;
+  width: 90%;
+  color: #333;
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thick-circle:after {
+  content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.skill-title a {
+  color: #ddd;
+}
+
+.skill-title-block {
+  margin-bottom: 10px;
+}
+
+
+/* Animations */
+
+@keyframes grow-right {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 

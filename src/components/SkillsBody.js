@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SkillItem from './SkillItem';
+import SkillsDetail from './SkillsDetail';
 
 export default class SkillsBody extends Component {
     constructor(props) {
@@ -19,8 +20,8 @@ export default class SkillsBody extends Component {
                     { name: "R", level: 8 },
                     { name: "SQL", level: 8 },
                     { name: "Java", level: 7 },
-                    { name: "Node.JS", level: 8},
-                    { name: "Data Processing & Manipulation", level: 8}
+                    { name: "Node.JS", level: 8 },
+                    { name: "Data Processing & Manipulation", level: 8 }
                 ]
             },
             professional: [
@@ -30,31 +31,44 @@ export default class SkillsBody extends Component {
                 { name: "Problem Solving", level: 8 },
                 { name: "Initiative", level: 8 },
                 { name: "Project Management", level: 7 }
-            ]
+            ],
+            show: "front"
         }
     }
 
+    handleClick = (show) => {
+        this.setState({ show: show });
+    }
+
+    
+
     renderSkills = () => {
-        if(this.props.showTechnicial) {
+        if (this.props.showTechnicial) {
             return (
                 <div className="part technical">
-                    <div className="front">
-                        {this.state.technical.front.map((el) => {
-                            return <SkillItem name={el.name} level={el.level} />
-                        })}
+                    <div className="skill-title-block">
+                        <h3 className={this.state.show === "front" ? "skill-title accent-down" : "skill-title"}>
+                            <a onClick={() => this.handleClick("front")}>Front-end</a>
+                        </h3>
+                        <h3 class="skill-title divider">|</h3>
+                        <h3 className={this.state.show === "back" ? "skill-title accent-down" : "skill-title"}>
+                            <a onClick={() => this.handleClick("back")}>Back-end</a>
+                        </h3>
                     </div>
-                    <div className="back">
-                        {this.state.technical.back.map((el) => {
-                            return <SkillItem name={el.name} level={el.level} />
-                        })}
-                    </div>
+
+                    {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} index={i} />) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level} index={i} />)}
                 </div>
             )
+
+
         } else {
             return (
                 <div className="part professional">
-                    {this.state.professional.map((el) => {
-                        return <SkillItem name={el.name} level={el.level} />
+                    <div className="skill-title-block">
+                        <h3 className="skill-title">Professional</h3>
+                    </div>
+                    {this.state.professional.map((el, i) => {
+                        return <SkillItem name={el.name} level={el.level} index={i} />
                     })}
                 </div>
             )
@@ -63,9 +77,14 @@ export default class SkillsBody extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                {this.renderSkills()}
-            </React.Fragment>
+            <div className="skills-body">
+                <div className="half-page left">
+                    {this.renderSkills()}
+                </div>
+                <div className="half-page right">
+                    <SkillsDetail />
+                </div>
+            </div>
         )
     }
 }
