@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import Splash from "./components/sections/Splash";
 import Section from "./components/Section";
 
+import "antd/dist/antd.css";
 import './App.css';
+
 
 class App extends Component {
   render() {
