@@ -360,15 +360,21 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 }
 
 .thick-circle {
-  border: solid 30px #333;
+  border: solid 30px #cf1d32;
   border-radius: 50%;
   width: 90%;
-  color: #333;
+  color: #ddd;
   font-size: 4rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all ease 0.3s;
+}
+
+.thick-circle.faded {
+  border-color: #333;
+  color: #333;
 }
 
 .thick-circle:after {
@@ -388,6 +394,50 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 .skill-card {
   cursor: pointer;
 }
+
+.skills-details {
+  margin-top: 30px;
+}
+
+
+/* Projects Styles */
+
+.devices-container {
+  position: relative;
+}
+
+.laptop {
+  position: absolute;
+  margin: 50px 0;
+}
+
+.laptop .screen {
+  position: absolute;
+  width: 38%;
+  height: 16vw;
+  padding-left: 3%;
+  top: 1vw;
+}
+
+.laptop .skin {
+  position: relative;
+  width: 55%;
+  transform: scaleX(1.1);
+
+}
+
+.mobile {
+  position: relative;
+}
+
+.mobile .skin {
+  width: 35%;
+    position: absolute;
+    margin-top: 9%;
+    left: 20%;
+}
+
+
 
 
 /* Animations */

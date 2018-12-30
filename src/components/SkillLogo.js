@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
 export default class SkillLogo extends Component {
-
     getSymbol = () => {
-        if(this.props.selected === null){
+        if (this.props.selected === null) {
             return "Sk";
         } else {
             return this.props.selected.symbol
@@ -13,7 +12,7 @@ export default class SkillLogo extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="thick-circle faded">
+                <div className={this.props.selected === null ? "thick-circle faded" : "thick-circle"}>
                     <div className="symbol">{this.getSymbol()}</div>
                 </div>
             </React.Fragment>
