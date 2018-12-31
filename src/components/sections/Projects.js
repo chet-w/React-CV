@@ -10,27 +10,27 @@ export default class Projects extends Component {
         key: "vbs",
         details: "details about the project",
         dir: "../img/projects/vbs/",
-        size: 6,
+        size: 7,
         laptop: 1,
-        mobile: 5
+        mobile: 7
       },
       {
         name: "Unique Design & Print",
         key: "udp",
         details: "details about the project",
         dir: "../img/projects/udp/",
-        size: 6,
+        size: 7,
         laptop: 1,
-        mobile: 6
+        mobile: 7
       },
       {
         name: "Old CV",
         key: "cv",
         details: "details about the project",
         dir: "../img/projects/cv/",
-        size: 7,
+        size: 8,
         laptop: 1,
-        mobile: 6
+        mobile: 8
       }]
     }
   }
@@ -39,7 +39,9 @@ export default class Projects extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <h1 className="title">Projects</h1>
+        <div className="title-bar">
+        <h1 className="title">Projects</h1>
+        </div>
           <div className="section-body">
             {this.state.projects.map(el => {
               return <Project data={el}/>

@@ -17,7 +17,9 @@ export default class Skills extends Component {
   render() {
     return (
       <div className="container">
+        <div className="title-bar">
         <h1 className="title">Skills</h1>
+        </div>
         <div className="section-body">
           <div className="options">No so Technicial<Switch defaultChecked onChange={(e) => this.setState({ showTechnicial: e }) } />Technicial</div>
           <SkillsBody showTechnicial={this.state.showTechnicial}/>

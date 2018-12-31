@@ -10,7 +10,9 @@ export default class Profile extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <h1 className="title">About Me</h1>
+        <div className="title-bar">
+        <h1 className="title">About Me</h1>
+        </div>
           <div className="section-body">
           <h3>The Basics</h3>
             <div className="profile-items">
