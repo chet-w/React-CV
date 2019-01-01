@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SkillItem from './SkillItem';
+import SkillItem from './SkillItem.tsx';
 import SkillsDetail from './SkillsDetail';
 
 export default class SkillsBody extends Component {

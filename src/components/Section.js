@@ -4,7 +4,7 @@ import Profile from './sections/Profile';
 import Experience from './sections/Experience';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
-import Contact from './sections/Contact';
+import Contact from './sections/Contact.tsx';
 
 export default class Section extends Component {
     constructor(props) {

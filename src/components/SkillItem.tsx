@@ -1,7 +1,11 @@
 import React from 'react';
 import { Progress } from 'antd';
 
-const SkillItem = (props) => {
+export interface propTypes {
+  name: string; level: number; symbol: string; handleSkillSelect: Function; 
+}
+
+const SkillItem = (props: propTypes) => {
   return (
     <div className="skill-card" onClick={() => props.handleSkillSelect({name: props.name, symbol: props.symbol, level: props.level})}>
       {props.name}
