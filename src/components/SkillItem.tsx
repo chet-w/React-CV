@@ -1,5 +1,6 @@
 import React from 'react';
-import { Progress } from 'antd';
+// import { Progress } from 'antd';
+import { Progress } from "antd";
 
 export interface propTypes {
   name: string; level: number; symbol: string; handleSkillSelect: Function; 
