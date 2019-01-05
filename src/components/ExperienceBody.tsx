@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import CircleChain from './CircleChain';
+import CircleChain from "./CircleChain";
 
 export default class ExperienceBody extends Component {
   render() {

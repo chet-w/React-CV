@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-const Devices = props => {
+interface PropTypes { 
+    data: {
+        name: string,
+        key: string,
+        details: string,
+        dir: string,
+        size: number,
+        laptop: number,
+        mobile: number
+    };
+}
+
+const Devices = (props: PropTypes) => {
     return (
         <div className="devices-container">
             <div className="laptop">

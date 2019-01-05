@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import DetailedCircle from './DetailedCircle';
+import DetailedCircle from "./DetailedCircle";
 
-export default class CircleChain extends Component {
+export interface PropTypes { 
+  length: number;
+  type: string;
+  direction: string;
+}
+
+export default class CircleChain extends Component<PropTypes> {
+  constructor(props: PropTypes){
+    super(props);
+  }
 
   generateChain = () => {
       let chain = [];
