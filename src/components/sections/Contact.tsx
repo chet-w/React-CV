@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import WrappedContactForm from "../ContactForm";
+import ContactItems from "../ContactItems";
 
 class Contact extends Component {
   render() {
@@ -9,7 +11,11 @@ class Contact extends Component {
             <h1 className="title">Contact</h1>
           </div>
           <div className="section-body">
-
+            <h2>Want to get in touch?</h2>
+            <div className="contact-body">
+              <ContactItems />
+              <WrappedContactForm />
+            </div>
 
           </div>
           <div className="hr-line"></div>
