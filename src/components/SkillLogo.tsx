@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+interface PropTypes 
 
 export default class SkillLogo extends Component {
     getSymbol = () => {
