@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Project from "../Project";
+import { Button } from "antd";
 
 interface PropTypes {
 
@@ -93,6 +94,9 @@ export default class Projects extends Component<PropTypes, StateTypes> {
               )
             })
             }
+            <div className="github-plug">
+              <Button type="primary">See all my projects on Github</Button>
+            </div>
 
           </div>
           <div className="hr-line"></div>

@@ -5,7 +5,9 @@ class Contact extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <h1 className="title">Contact</h1>
+          <div className="title-bar">
+            <h1 className="title">Contact</h1>
+          </div>
           <div className="section-body">
 
 

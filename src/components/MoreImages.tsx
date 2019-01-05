@@ -26,20 +26,34 @@ class MoreImages extends Component<propTypes, stateTypes> {
         }
     }
 
+    getImages = () => {
+        let imgs:JSX.Element[] = [];
+
+        for(let i:number = 1; i < this.props.data.size; i++) {
+            const el = (
+                <img src={require(`../img/projects/${this.props.data.key}/${this.props.data.key}${i}.png`)} />
+            );
+            imgs.push(el);
+        }
+        return imgs;
+    }
+
     render() {
         return (
             <div className="more-images">
                 <Button onClick={(e: any) => this.setState({ modalVisable: true })} type="primary">More images</Button>
                 <Modal
-                    title="Basic Modal"
+                    title={this.props.data.name}
+                    style={{ top: 0 }}
                     visible={this.state.modalVisable}
+                    onCancel={(e: any) => this.setState({ modalVisable: false })}
                     footer={[
-                        <Button key="close" onClick={(e: any) => this.setState({ modalVisable: false })}>Close</Button>
+                        <Button type="primary" key="close" onClick={(e: any) => this.setState({ modalVisable: false })}>Close</Button>
                     ]}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <Carousel>
+                        {this.getImages()}
+                    </Carousel>
                 </Modal>
             </div>
         )

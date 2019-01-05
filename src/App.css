@@ -498,14 +498,14 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
     height: auto;
     width: auto;
     text-align: center;
-    color: #cf1d32;
+    color: #fff;
 
 }
 
 .ant-btn-primary:hover {
   background: #111;
-  border-color: #fff;
-  color: #fff;
+  border-color: #cf1d32;
+  color: #cf1d32;
 }
 
 .ant-btn-primary:active, .ant-btn-primary:focus {
@@ -519,7 +519,49 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   text-align: right;
 }
 
+.ant-modal {
+  width: 75vw !important;
+}
 
+.ant-modal-content {
+  background-color: #111;
+  color: #fff;
+}
+
+.ant-modal-header {
+  background: #111;
+  color: #fff;
+  border-bottom: 1px solid #ed213a;
+}
+
+.ant-modal-title {
+  color: #fff;
+}
+
+.anticon svg {
+  fill: #ed213a;
+}
+
+.ant-modal-body {
+  padding: 0
+}
+
+.ant-modal-footer {
+  border-top: 1px solid #ed213a;
+}
+
+.ant-carousel .slick-dots li.slick-active button{
+  background: #ed213a;
+}
+
+.github-plug {
+  text-align: center;
+}
+
+.github-plug .ant-btn-primary {
+  font-size: 17px;
+  padding: 15px 30px;
+}
 
 
 
