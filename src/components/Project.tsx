@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Devices from "./Devices";
+import ProjectDetail from "./ProjectDetail";
 
 interface PropTypes {
     data: {
@@ -19,6 +20,7 @@ export default class Project extends Component<PropTypes> {
         return (
             <React.Fragment>
                 <Devices data={this.props.data} />
+                <ProjectDetail project={this.props.data.name}/>
             </React.Fragment>
         )
     }

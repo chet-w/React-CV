@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Project from "../Project";
 
 interface PropTypes {
-  
+
 };
 
 interface StateTypes {
@@ -47,7 +47,8 @@ export default class Projects extends Component<PropTypes, StateTypes> {
         size: 8,
         laptop: 1,
         mobile: 8
-      }]
+      }
+    ]
     }
   }
 
@@ -55,12 +56,17 @@ export default class Projects extends Component<PropTypes, StateTypes> {
     return (
       <React.Fragment>
         <div className="container">
-        <div className="title-bar">
-        <h1 className="title">Projects</h1>
-        </div>
+          <div className="title-bar">
+            <h1 className="title">Projects</h1>
+          </div>
           <div className="section-body">
+
             {this.state.projects.map(el => {
-              return <Project data={el}/>
+              return (
+                <div className="project-wrapper">
+                  <Project data={el} />
+                </div>
+              )
             })
             }
 
