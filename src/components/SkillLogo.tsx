@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
-interface PropTypes 
+export interface PropTypes {  
+    selected: {
+        symbol: string
+    };
+}
 
-export default class SkillLogo extends Component {
+export default class SkillLogo extends Component<PropTypes> {
     getSymbol = () => {
-        if (this.props.selected === null) {
+        if (this.props.selected.symbol === "") {
             return "Sk";
         } else {
             return this.props.selected.symbol
@@ -14,7 +18,7 @@ export default class SkillLogo extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className={this.props.selected === null ? "thick-circle faded" : "thick-circle"}>
+                <div className={this.props.selected.symbol === "" ? "thick-circle faded" : "thick-circle"}>
                     <div className="symbol">{this.getSymbol()}</div>
                 </div>
             </React.Fragment>

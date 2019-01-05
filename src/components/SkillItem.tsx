@@ -3,7 +3,11 @@ import React from 'react';
 import { Progress } from "antd";
 
 export interface propTypes {
-  name: string; level: number; symbol: string; handleSkillSelect: Function; 
+  name: string; 
+  level: number; 
+  symbol: string; 
+  index: number;
+  handleSkillSelect: Function; 
 }
 
 const SkillItem = (props: propTypes) => {

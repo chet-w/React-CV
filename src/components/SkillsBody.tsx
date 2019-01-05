@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
-import SkillItem from './SkillItem.tsx';
+import SkillItem from './SkillItem';
 import SkillsDetail from './SkillsDetail';
 
-export default class SkillsBody extends Component {
-    constructor(props) {
+
+export interface propTypes {
+    showTechnicial: boolean;
+}
+
+export interface skillType {
+    name: string;
+    symbol: string;
+    level: number;
+}
+
+export interface stateTypes {
+    technical: {
+        front: skillType[],
+        back: skillType[]
+    };
+    professional: skillType[];
+    show: string;
+    selectedSkill: skillType;
+}
+
+export default class SkillsBody extends Component<propTypes, stateTypes> {
+    constructor(props: propTypes) {
         super(props);
         this.state = {
             technical: {
@@ -33,15 +54,15 @@ export default class SkillsBody extends Component {
                 { name: "Project Management", symbol: "Pm", level: 7 }
             ],
             show: "front",
-            selectedSkill: null
+            selectedSkill: { name: "", symbol: "", level: 0 }
         }
     }
 
-    handleClick = (show) => {
+    handleClick = (show: string) => {
         this.setState({ show: show });
     }
 
-    handleSkillSelect = (selected) => {
+    handleSkillSelect = (selected: any) => {
         console.log(selected);
         this.setState({ selectedSkill: selected })
     }
@@ -54,12 +75,11 @@ export default class SkillsBody extends Component {
                         <h3 className={this.state.show === "front" ? "skill-title accent-down" : "skill-title"}>
                             <a onClick={() => this.handleClick("front")}>Front-end</a>
                         </h3>
-                        <h3 class="skill-title divider">|</h3>
+                        <h3 className="skill-title divider">|</h3>
                         <h3 className={this.state.show === "back" ? "skill-title accent-down" : "skill-title"}>
                             <a onClick={() => this.handleClick("back")}>Back-end</a>
                         </h3>
                     </div>
-
                     {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)}/>) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level}  symbol={el.symbol} index={i}  handleSkillSelect={this.handleSkillSelect.bind(this)}/>)}
                 </div>
             )

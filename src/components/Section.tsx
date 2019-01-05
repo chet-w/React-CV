@@ -4,10 +4,19 @@ import Profile from './sections/Profile';
 import Experience from './sections/Experience';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
-import Contact from './sections/Contact.tsx';
+import Contact from './sections/Contact';
 
-export default class Section extends Component {
-    constructor(props) {
+
+export interface propTypes {
+    title: string;
+}
+
+export interface stateTypes {
+    page: any;
+}
+
+export default class Section extends Component<propTypes, stateTypes> {
+    constructor(props: propTypes) {
         super(props);
         this.state = { page: this.getPage() }
     }
