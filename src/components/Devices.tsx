@@ -4,7 +4,7 @@ interface PropTypes {
     data: {
         name: string,
         key: string,
-        details: string,
+        details: string[],
         dir: string,
         size: number,
         laptop: number,

@@ -7,7 +7,8 @@ interface PropTypes {
     data: {
         name: string,
         key: string,
-        details: string,
+        details: string[],
+        tech: string[],
         dir: string,
         size: number,
         laptop: number,
@@ -20,7 +21,7 @@ export default class Project extends Component<PropTypes> {
         return (
             <React.Fragment>
                 <Devices data={this.props.data} />
-                <ProjectDetail project={this.props.data.name}/>
+                <ProjectDetail data={this.props.data}/>
             </React.Fragment>
         )
     }
