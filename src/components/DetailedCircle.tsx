@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Circle from "./Circle";
 
-import Circle from './Circle';
+interface PropTypes {
+  direction: string;
+  image: string;
+}
 
-export default class DetailedCircle extends Component {
-  constructor(props) {
+class DetailedCircle extends Component<PropTypes> {
+  constructor(props: PropTypes) {
     super(props);
 
   }
@@ -21,3 +25,5 @@ export default class DetailedCircle extends Component {
     )
   }
 }
+
+export default DetailedCircle;

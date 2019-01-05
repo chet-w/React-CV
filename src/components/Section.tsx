@@ -6,8 +6,17 @@ import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
-export default class Section extends Component {
-    constructor(props) {
+
+export interface propTypes {
+    title: string;
+}
+
+export interface stateTypes {
+    page: any;
+}
+
+export default class Section extends Component<propTypes, stateTypes> {
+    constructor(props: propTypes) {
         super(props);
         this.state = { page: this.getPage() }
     }

@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
-import Project from '../Project';
+import Project from "../Project";
 
-export default class Projects extends Component {
-  constructor(props) {
+interface PropTypes {
+  
+};
+
+interface StateTypes {
+  projects: {
+    name: string,
+    key: string,
+    details: string,
+    dir: string,
+    size: number,
+    laptop: number,
+    mobile: number
+  }[];
+}
+
+export default class Projects extends Component<PropTypes, StateTypes> {
+  constructor(props: PropTypes) {
     super(props);
     this.state = {
       projects: [{
