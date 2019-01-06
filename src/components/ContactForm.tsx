@@ -1,64 +1,98 @@
 import React from "react";
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import TextArea from "antd/lib/input/TextArea";
+import { duration } from "moment";
 
 export interface propTypes extends FormComponentProps {
 
 }
 
-class ContactForm extends React.Component<propTypes> {
+export interface stateTypes {
+    phOptions: { name: string, email: string, message: string }[];
+    selected: number;
+    formDisabled: boolean;
+}
+
+class ContactForm extends React.Component<propTypes, stateTypes> {
+
+    constructor(props: propTypes) {
+        super(props);
+        this.state = {
+            phOptions: [
+                { name: "Frodo Baggins", email: "frodo@theshire.co.nz", message: "The ring is mine" },
+                { name: "Samwise Gamgee", email: "sam@theshire.co.nz", message: "Boil 'em, mash 'em, stick 'em in a stew" },
+                { name: "Legolas Greenleaf", email: "legolas@woodland.co.nz", message: "They're taking the Hobbits to Isengard" },
+                { name: "Gimli, son of Gloin", email: "gimli@moria.co.nz", message: "...and my axe!" },
+                { name: "Gandalf the Grey", email: "gandalf@valinor.co.nz", message: "You shall not pass!" },
+            ],
+            selected: Math.round(Math.random() * 4),
+            formDisabled: false
+        };
+    }
+
     handleSubmit = (e: any) => {
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll((err: any, values: any) => {
+        this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                this.setState({ formDisabled: true });
+                message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
+
+            } else {
+                message.error("Looks like you've still got some feilds to fill out");
             }
         });
     }
 
-
     render() {
         const { getFieldDecorator } = this.props.form;
+        const placeholder = this.state.phOptions[this.state.selected];
 
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Item
-                    label="Name"
-                >
-                    {getFieldDecorator('name', {
-                        rules: [{ required: true, message: 'Please enter your name', whitespace: true }],
-                    })(
-                        <Input />
-                    )}
-                </Form.Item>
-                <Form.Item
-                    label="E-mail"
-                >
-                    {getFieldDecorator('email', {
-                        rules: [{
-                            type: 'email', message: "That doesn't look like a valid e-mail address",
-                        }, {
-                            required: true, message: 'Please enter your e-mail address',
-                        }],
-                    })(
-                        <Input />
-                    )}
-                </Form.Item>
-                <Form.Item
-                    label="Message"
-                >
-                    {getFieldDecorator('message', {
-                        rules: [{ required: true, message: 'Please enter a message', whitespace: true }],
-                    })(
-                        <TextArea />
-                    )}
-                </Form.Item>
+            <div className={this.state.formDisabled ? "contact-form disabled" : "contact-form"}>
+                <h3 style={{ marginBottom: "20px" }}>Then fill out the form</h3>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Item
+                        label="Name"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('name', {
+                            rules: [{ required: true, message: 'Please enter your name', whitespace: true }],
+                        })(
+                            <Input placeholder={placeholder.name} disabled={this.state.formDisabled} />
+                        )}
+                    </Form.Item>
+                    <Form.Item
+                        label="E-mail"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('email', {
+                            rules: [{
+                                type: 'email', message: "That doesn't look like a valid e-mail address",
+                            }, {
+                                required: true, message: 'Please enter your e-mail address',
+                            }],
+                        })(
+                            <Input placeholder={placeholder.email} disabled={this.state.formDisabled} />
+                        )}
+                    </Form.Item>
+                    <Form.Item
+                        label="Message"
+                        hasFeedback
+                    >
+                        {getFieldDecorator('message', {
+                            rules: [{ required: true, message: 'Please enter a message', whitespace: true }],
+                        })(
+                            <TextArea placeholder={placeholder.message} disabled={this.state.formDisabled} />
+                        )}
+                    </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit">Submit</Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" disabled={this.state.formDisabled} >Submit</Button>
+                    </Form.Item>
+                </Form>
+            </div>
         );
     }
 }

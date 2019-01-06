@@ -13,8 +13,8 @@ class Contact extends Component {
           <div className="section-body">
             <h2>Want to get in touch?</h2>
             <div className="contact-body">
-              <ContactItems />
               <WrappedContactForm />
+              <ContactItems />
             </div>
 
           </div>
