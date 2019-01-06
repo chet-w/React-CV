@@ -35,7 +35,6 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
             if (!err) {
-                console.log('Received values of form: ', values);
                 this.setState({ formDisabled: true });
                 message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
 

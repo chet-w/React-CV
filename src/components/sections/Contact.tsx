@@ -19,6 +19,7 @@ class Contact extends Component {
 
           </div>
           <div className="hr-line"></div>
+          <div className="hr-line" style={{ margin: "0 auto 10%" }}></div>
         </div>
       </React.Fragment>
     )

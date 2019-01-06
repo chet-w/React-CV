@@ -576,15 +576,12 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 
 .ant-form-item-label {
   line-height: 0;
+  margin-bottom: 5px;
 }
 
 .ant-form-item-label label {
   color: #fff;
 }
-
-/* .ant-input:hover, .ant-input:focus, .ant-input:active {
-  border-color: #ed213a;
-} */
 
 .has-feedback.has-success .ant-input{
   border-color: #52c41a;
@@ -619,6 +616,16 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 
 .contact-form.disabled .has-success.has-feedback .ant-form-item-children-icon {
   color: #555;
+}
+
+.disabled .ant-form-item-label label {
+    color: #555;
+}
+
+.contact-details {
+  margin-top: 30px;
+  width: 50%;
+  margin-left: 10%;
 }
 
 
