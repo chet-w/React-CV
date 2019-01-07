@@ -39,7 +39,7 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
                 message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
 
             } else {
-                message.error("Looks like you've still got some feilds to fill out");
+                message.error("Looks like you've still got some fields to fill out");
             }
         });
     }

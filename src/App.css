@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5 {
 .circle-chain {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 50%;
 }
 
 .detailed-text {
@@ -157,11 +157,6 @@ h1, h2, h3, h4, h5 {
 .detailed-circle:after:hover {
   cursor: auto;
   transform: none;
-}
-
-.detailed-circle:hover + .detailed-text.show-right{
-  opacity: 1;
-  right: 0;
 }
 
 .detailed-circle:hover + .detailed-text.show-left{
@@ -300,7 +295,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 .experience-body {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
 }
 
 /* Skills Styles */
