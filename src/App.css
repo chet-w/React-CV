@@ -71,9 +71,9 @@ h1, h2, h3, h4, h5 {
 .detailed-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   position: relative;
-  margin-bottom: 95px;
+  margin-bottom: 20px;
 }
 
 .detailed-container.reversed {
@@ -91,64 +91,36 @@ h1, h2, h3, h4, h5 {
 }
 
 .detailed-text {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease;
-  background: #333;
+  background: #111;
   padding: 15px;
   position: relative;
   z-index: 1;
 
 }
 
-.detailed-text.show-left {
-  left: 20%;
-}
-
 .detailed-text.show-right {
-  right: 20%;
+  right: 0;
 }
 
-.detailed-text.show-left:after {
-  content: " ";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: calc(50% - 10px);
-  transform: rotate(45deg);
-  right: -10px;
-  background: #333;
-
-}
-
-.detailed-text.show-right:after {
-  content: " ";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: calc(50% - 10px);
-  transform: rotate(45deg);
-  left: -10px;
-  background: #333;
-
-}
 
 .detailed-circle {
-  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
 }
 
-.detailed-circle:after {
+/* .detailed-circle:after {
   content: " ";
   width: 2px;
-  height: 100px;
+  height: 30px;
   background: #ddd;
   position: absolute;
   bottom: -100%;
   left: 50%;
   pointer-events: none;
-}
+} */
 
 .detailed-container:last-of-type .detailed-circle:after {
   content: none;
@@ -159,11 +131,10 @@ h1, h2, h3, h4, h5 {
   transform: none;
 }
 
-.detailed-circle:hover + .detailed-text.show-left{
+.detailed-circle:hover + .detailed-text.show-right{
   opacity: 1;
-  left: 0;
+  right: 0;
 }
-
 
 
 /* Splash Styles */
@@ -297,6 +268,46 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   flex-direction: row;
   justify-content: left;
 }
+
+.detailed-text .timeframe {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.ant-collapse {
+  background-color: #111;
+  border: none;
+
+}
+
+.ant-collapse > .ant-collapse-item {
+  border-bottom: none;
+}
+
+.ant-collapse > .ant-collapse-item.ant-collapse-no-arrow > .ant-collapse-header {
+  padding: 0;
+}
+
+.detailed-text .name {
+  font-size: 1.2rem;
+}
+
+.ant-collapse-content {
+  overflow: hidden;
+  color: #fff;
+  background-color: #111;
+  border-top: none;
+}
+
+.ant-collapse-content > .ant-collapse-content-box {
+  padding: 16px 0 0 0;
+}
+
+.ant-motion-collapse-active {
+  -webkit-transition: height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition: height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
+
 
 /* Skills Styles */
 
@@ -633,6 +644,11 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 @keyframes grow-right {
   from { width: 0 }
   to { width: 100% }
+}
+
+@keyframes grow {
+  from { height: 0 }
+  to { height: 100%; }
 }
 
 

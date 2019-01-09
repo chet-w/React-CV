@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ExperienceBody from "../ExperienceBody";
+import { ExperienceBody } from "../ExperienceBody";
 
 export default class Experience extends Component {
   render() {

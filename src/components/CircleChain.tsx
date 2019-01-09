@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import DetailedCircle from "./DetailedCircle";
+import { expItem } from "./ExperienceBody";
 
 export interface PropTypes { 
   length: number;
   type: string;
+  data: expItem[];
 }
 
 export default class CircleChain extends Component<PropTypes> {
@@ -15,7 +17,7 @@ export default class CircleChain extends Component<PropTypes> {
       let chain = [];
       for(let i = 0; i < this.props.length; i++){
         chain.push(
-            <DetailedCircle image={this.props.type} />
+            <DetailedCircle image={this.props.type} data={this.props.data[i]}/>
         );
       }
       return chain;
