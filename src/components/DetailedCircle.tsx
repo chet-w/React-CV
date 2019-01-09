@@ -23,15 +23,25 @@ class DetailedCircle extends Component<PropTypes> {
           <Circle image={this.props.image} />
         </div>
         <div className="detailed-text show-right">
-          {/* <div className="name accent-down"><h4>{this.props.data.title}</h4></div>
-          <div className="timeframe">{this.props.data.timeframe}</div> */}
+
           <Collapse defaultActiveKey={['0']}>
-            <Panel showArrow={false}  header={<React.Fragment>
-            <div className="name accent-down"><h4>{this.props.data.title}</h4></div>
-            <div className="timeframe">{this.props.data.timeframe}</div>
+            <Panel showArrow={false} header={<React.Fragment>
+              <div className="name accent-down"><h4>{this.props.data.title}</h4></div>
+              <div className="timeframe">{this.props.data.timeframe}</div>
             </React.Fragment>
             } key="1">
-              <div className="details">{this.props.data.details.map( el => <p>{el}</p>)}</div>
+              <div className="details">
+                {this.props.data.details.map(el => <p>{el}</p>)}
+              </div>
+              {this.props.data.skills ? (
+                <div className="skills-learned">
+                  <h5 className="accent-down">Skills applied</h5>
+                  <ul>
+                    {this.props.data.skills.map(el => <li>{el}</li>)}
+                  </ul>
+                </div>
+              ) : ""
+              }
             </Panel>
           </Collapse>
         </div>

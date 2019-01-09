@@ -308,6 +308,25 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   transition: height 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 }
 
+.detailed-text .skills-learned h5 {
+  font-size: 1rem;
+}
+
+.detailed-text .details {
+  font-size: 1rem;
+}
+
+.detailed-text .skills-learned ul {
+  list-style: none;
+  padding: 0;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.detailed-text .skills-learned li {
+  
+}
+
 
 /* Skills Styles */
 
