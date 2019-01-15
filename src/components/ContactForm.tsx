@@ -50,7 +50,6 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
 
         return (
             <div className={this.state.formDisabled ? "contact-form disabled" : "contact-form"}>
-                <h3 style={{ marginBottom: "20px" }}>Then fill out the form</h3>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Item
                         label="Name"

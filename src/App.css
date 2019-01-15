@@ -203,8 +203,12 @@ h1, h2, h3, h4, h5 {
 
 .section .section-body {
   margin-top: 5%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 
+}
+
+.section .body-text {
+  column-count: 2;
 }
 
 .section .circle {
@@ -226,17 +230,19 @@ h1, h2, h3, h4, h5 {
   display: flex;
     align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 } 
 
 .section .profile-item {
-  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
 }
 
 .section .profile-item .text {
   display: inline-block;
   vertical-align: top;
-  margin-top: 35px;
 }
 
 .section h3 {

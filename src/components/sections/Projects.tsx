@@ -95,7 +95,7 @@ export default class Projects extends Component<PropTypes, StateTypes> {
             })
             }
             <div className="github-plug">
-              <Button type="primary">See all my projects on Github</Button>
+              <a target="_blank" href="https://www.github.com/chet-w"><Button type="primary">See all my projects on Github</Button></a>
             </div>
 
           </div>
