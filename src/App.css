@@ -1,3 +1,10 @@
+* {
+  transition: background-color 0.4s ease;
+  transition: background 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -153,6 +160,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   width: 50%;
   position: relative;
   top: 30%;
+  height: auto;
 
 }
 
@@ -160,6 +168,13 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   margin: 0;
   font-size: 3rem; 
   
+}
+
+.splash .switch-container {
+    position: relative;
+    left: 70%;
+    width: 20%;
+    margin: 0;
 }
 
 /* General Section styles */
@@ -222,7 +237,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   height: 50px;
   border: solid 2px #ed213a;
   border-radius: 30px;
-  margin: 20px;
+  margin-right: 20px;
   display: inline-block;
 }
 
@@ -300,7 +315,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
 }
 
 .ant-collapse-content > .ant-collapse-content-box {
-  padding: 16px 0 0 0;
+  padding: 16px 0 0 70px;
 }
 
 .ant-motion-collapse-active {
@@ -316,6 +331,23 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   font-size: 1rem;
 }
 
+.detailed-text .more {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ant-collapse-header:hover  .more {
+  opacity: 1;
+}
+
+.ant-collapse-item-active .ant-collapse-header:hover  .more {
+  opacity: 0;
+}
+
+.ant-collapse-item-active .more {
+  opacity: 0;
+}
+
 .detailed-text .skills-learned ul {
   list-style: none;
   padding: 0;
@@ -323,8 +355,8 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   column-gap: 20px;
 }
 
-.detailed-text .skills-learned li {
-  
+.detailed-header {
+  display: flex;
 }
 
 
@@ -364,13 +396,13 @@ background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox=
   margin-bottom: 30px;
 }
 
-.options .ant-switch-checked {
+.ant-switch-checked {
   background: #93291e;
   background: -webkit-linear-gradient(to right, #ed213a, #93291e);
   background: linear-gradient(to right, #ed213a, #93291e);
 }
 
-.options .ant-switch {
+.ant-switch {
   margin: 0 30px;
   
 }

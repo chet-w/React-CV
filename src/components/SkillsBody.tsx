@@ -80,7 +80,7 @@ export default class SkillsBody extends Component<propTypes, stateTypes> {
                             <a onClick={() => this.handleClick("back")}>Back-end</a>
                         </h3>
                     </div>
-                    {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)}/>) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level}  symbol={el.symbol} index={i}  handleSkillSelect={this.handleSkillSelect.bind(this)}/>)}
+                    {this.state.show === "front" ? this.state.technical.front.map((el, i) => <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)} />) : this.state.technical.back.map((el, i) => <SkillItem name={el.name} level={el.level} symbol={el.symbol} index={i} handleSkillSelect={this.handleSkillSelect.bind(this)} />)}
                 </div>
             )
 

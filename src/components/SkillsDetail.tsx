@@ -7,6 +7,7 @@ interface PropTypes {
 }
 
 const SkillDetail = (props: PropTypes) => {
+  
     return (
       <React.Fragment>
         <SkillLogo selected={props.selected}/>

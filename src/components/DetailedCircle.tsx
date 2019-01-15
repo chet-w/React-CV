@@ -19,16 +19,20 @@ class DetailedCircle extends Component<PropTypes> {
   render() {
     return (
       <div className="detailed-container">
-        <div className="detailed-circle">
-          <Circle image={this.props.image} />
-        </div>
         <div className="detailed-text show-right">
 
           <Collapse defaultActiveKey={['0']}>
-            <Panel showArrow={false} header={<React.Fragment>
-              <div className="name accent-down"><h4>{this.props.data.title}</h4></div>
-              <div className="timeframe">{this.props.data.timeframe}</div>
-            </React.Fragment>
+            <Panel showArrow={false} header={<div className="detailed-header">
+              <div className="detailed-circle">
+                <Circle image={this.props.image} />
+              </div>
+              <div>
+                <div className="name accent-down"><h4>{this.props.data.title}</h4></div>
+                <div className="timeframe">{this.props.data.timeframe}</div>
+                <div className="more accent-down">More information</div>
+              </div>
+
+            </div>
             } key="1">
               <div className="details">
                 {this.props.data.details.map(el => <p>{el}</p>)}

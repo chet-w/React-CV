@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 export interface PropTypes {  
     selected: {
-        symbol: string
+        symbol: string,
+        name: string,
+        level: number
     };
 }
 
@@ -16,11 +18,11 @@ export default class SkillLogo extends Component<PropTypes> {
     }
 
     render() {
+        console.log(this.props);
         return (
             <React.Fragment>
-                <div className={this.props.selected.symbol === "" ? "thick-circle faded" : "thick-circle"}>
                     <div className="symbol">{this.getSymbol()}</div>
-                </div>
+                    <div className="skill-name">{this.props.selected.name}</div>
             </React.Fragment>
         )
     }
