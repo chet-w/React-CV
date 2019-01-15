@@ -1,6 +1,6 @@
 .App.light {
     color: #111;
-    background: #ddd;
+    background: #e7e7e7;
   }
     
   /* More of less global styles */
@@ -33,7 +33,7 @@
   }
   
   .App.light .section:nth-of-type(2n) {
-    background: #ddd;
+    background: #e0e0e0;
   }
   
   .App.light .section .title-bar {
@@ -41,7 +41,7 @@
   }
   
   .App.light .section:nth-of-type(2n) .title-bar{
-    background: #ddd;
+    background: #e0e0e0;
   
   }
   
