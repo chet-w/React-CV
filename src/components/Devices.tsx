@@ -19,7 +19,7 @@ const Devices = (props: PropTypes) => {
                 <img className="screen" src={
                     require(`../img/projects/${props.data.key}/${props.data.key}${props.data.laptop}.png`)
                 } />
-                <img className="skin" src={require("../img/macbook3.png")} />
+                <img className="skin" src={require("../img/macbook4.png")} />
             </div>
             <div className="mobile">
                 <img className="screen" src={

@@ -33,7 +33,7 @@
   }
   
   .App.light .section:nth-of-type(2n) {
-    background: #e0e0e0;
+    background: #e9e9e9;
   }
   
   .App.light .section .title-bar {
@@ -41,7 +41,7 @@
   }
   
   .App.light .section:nth-of-type(2n) .title-bar{
-    background: #e0e0e0;
+    background: #e9e9e9;
   
   }
   
@@ -58,6 +58,10 @@
   .App.light .ant-collapse-content {
     color: #111;
     background-color: #eee;
+  }
+
+  .App.light .circle-icon {
+    filter: brightness(0%);
   }
    
   
@@ -88,6 +92,14 @@
   .App.light  .ant-btn-primary:active, .ant-btn-primary:focus {
     color: #111;
     background-color: #eee;
+  }
+
+  .App.light .laptop .skin {
+    filter: brightness(200%);
+  }
+
+  .App.light .mobile .skin {
+    filter: invert(1);
   }
   
   

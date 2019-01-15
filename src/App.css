@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5 {
 .splash .switch-container {
   position: fixed;
   text-align: center;
-  top: 10px;
+  top: 20px;
   left: 70%;
   width: 20%;
   margin: 0;
@@ -483,7 +483,7 @@ h1, h2, h3, h4, h5 {
 .laptop .screen {
   position: absolute;
   width: 69%;
-  height: 17vw;
+  height: 18vw;
   padding-left: 5%;
   top: 1vw;
 }

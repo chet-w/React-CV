@@ -22,14 +22,13 @@ class App extends Component<{}, stateTypes> {
   }
 
   handleThemeChange = (isDark: boolean) => {
-    console.log(isDark);
     this.setState({ isDarkTheme: isDark })
   }
 
   render() {
     return (
       <div className={this.state.isDarkTheme ? "App" : "App light"}>
-        <Splash handleThemeChange={this.handleThemeChange}/>
+        <Splash handleThemeChange={this.handleThemeChange} isDark={this.state.isDarkTheme}/>
         <Section title="about me" />
         <Section title="experience" />
         <Section title="skills" />

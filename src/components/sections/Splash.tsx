@@ -4,6 +4,7 @@ import { Switch } from 'antd';
 
 export interface propTypes {
   handleThemeChange: Function;
+  isDark: boolean;
 }
 
 class Splash extends React.Component<propTypes> {
@@ -21,9 +22,10 @@ class Splash extends React.Component<propTypes> {
           <h2><span className="accent-down">Full-stack</span> Web Developer</h2>
         </div>
         <div className="switch-container">
-          Theme
           <div>
-            Light <Switch defaultChecked onChange={(e) => this.props.handleThemeChange(e)}/> Dark
+            <span className={!this.props.isDark ? "accent-down" : ""}>Light mode</span>
+            <Switch defaultChecked onChange={(e) => this.props.handleThemeChange(e)}/> 
+            <span className={this.props.isDark ? "accent-down" : ""}>Dark mode</span>
           </div>
         </div>
       </div>
