@@ -3,7 +3,7 @@ import SkillLogo from './SkillLogo';
 
 interface PropTypes {
   selected: { 
-    name: string, symbol: string, level: number },
+    name: string, symbol: string, level: number; details: string[] },
 }
 
 const SkillDetail = (props: PropTypes) => {
@@ -12,7 +12,7 @@ const SkillDetail = (props: PropTypes) => {
       <React.Fragment>
         <SkillLogo selected={props.selected}/>
         <div className="skills-details">
-            Details about how i use {props.selected !== null ? props.selected.name : "the skills"}
+            {props.selected.details.map(el => <p>{el}</p>)}
         </div>
       </React.Fragment>
     )

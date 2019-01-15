@@ -7,12 +7,13 @@ export interface propTypes {
   level: number; 
   symbol: string; 
   index: number;
+  details: string[];
   handleSkillSelect: Function; 
 }
 
 const SkillItem = (props: propTypes) => {
   return (
-    <div className="skill-card" onClick={() => props.handleSkillSelect({name: props.name, symbol: props.symbol, level: props.level})}>
+    <div className="skill-card" onClick={() => props.handleSkillSelect({name: props.name, symbol: props.symbol, level: props.level, details: props.details})}>
       {props.name}
       <Progress percent={props.level * 10} showInfo={false} />
     </div>

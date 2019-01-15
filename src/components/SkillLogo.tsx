@@ -13,7 +13,9 @@ export default class SkillLogo extends Component<PropTypes> {
         if (this.props.selected.symbol === "") {
             return "Sk";
         } else {
-            return this.props.selected.symbol
+            return (
+                this.props.selected.symbol
+                )
         }
     }
 
@@ -22,7 +24,7 @@ export default class SkillLogo extends Component<PropTypes> {
         return (
             <React.Fragment>
                     <div className="symbol">{this.getSymbol()}</div>
-                    <div className="skill-name">{this.props.selected.name}</div>
+                    <div className="skill-name accent-down">{this.props.selected.name}</div>
             </React.Fragment>
         )
     }

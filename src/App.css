@@ -449,6 +449,15 @@ h1, h2, h3, h4, h5 {
   transition: color 1s ease;
 }
 
+.symbol {
+  font-size: 8rem;
+  line-height: 8rem;
+}
+
+.skill-name {
+  font-size: 2rem;
+}
+
 .skill-title-block {
   margin-bottom: 10px;
 }
