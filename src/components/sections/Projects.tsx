@@ -86,10 +86,10 @@ export default class Projects extends Component<PropTypes, StateTypes> {
           </div>
           <div className="section-body">
 
-            {this.state.projects.map(el => {
+            {this.state.projects.map((el, i) => {
               return (
                 <div className="project-wrapper">
-                  <Project data={el} />
+                  <Project key={`${el.key}-${i}`} data={el} />
                 </div>
               )
             })

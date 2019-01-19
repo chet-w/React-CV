@@ -38,6 +38,10 @@
         width: 100%;
     }
 
+    .detailed-text {
+        padding-left: 0;
+    }
+
     /* Skills */
     .skills-body {
         flex-direction: column;
@@ -62,6 +66,20 @@
     .project-detail {
         width: 100%;
         margin-top: 7.5vw;
+    }
+
+    .ant-modal {
+        width: calc(100vw - 20px) !important;
+    }
+
+    .devices-container {
+        width: 100%;
+    }
+
+    .laptop .screen {
+        width: 69%;
+        height: 30vw;
+        top: 2vw;
     }
 
     /* Contact */

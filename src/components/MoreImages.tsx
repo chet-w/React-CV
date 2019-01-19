@@ -31,7 +31,7 @@ class MoreImages extends Component<propTypes, stateTypes> {
 
         for(let i:number = 1; i < this.props.data.size; i++) {
             const el = (
-                <img src={require(`../img/projects/${this.props.data.key}/${this.props.data.key}${i}.png`)} />
+                <img key={i} src={require(`../img/projects/${this.props.data.key}/${this.props.data.key}${i}.png`)} />
             );
             imgs.push(el);
         }

@@ -35,13 +35,13 @@ class DetailedCircle extends Component<PropTypes> {
             </div>
             } key="1">
               <div className="details">
-                {this.props.data.details.map(el => <p>{el}</p>)}
+                {this.props.data.details.map(el => <p key={el}>{el}</p>)}
               </div>
               {this.props.data.skills ? (
                 <div className="skills-learned">
                   <h5 className="accent-down">Skills applied</h5>
                   <ul>
-                    {this.props.data.skills.map(el => <li>{el}</li>)}
+                    {this.props.data.skills.map(el => <li key={el}>{el}</li>)}
                   </ul>
                 </div>
               ) : ""

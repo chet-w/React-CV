@@ -20,12 +20,12 @@ const ProjectDetail = (props: propTypes) => {
   return (
     <div className="project-detail">
       <h3 className="accent-down">{props.data.name}</h3>
-      {props.data.details.map(el => <p>{el}</p>)}
+      {props.data.details.map((el, i) => <p key={i}>{el}</p>)}
       <MoreImages data={props.data}/>
       <div className="tech-used">
       <span className="accent-down">Made using:</span>
         <ul>
-          {props.data.tech.map(el => <li>{el}</li>)}
+          {props.data.tech.map((el, i) => <li key={i}>{el}</li>)}
         </ul>
       </div>
 

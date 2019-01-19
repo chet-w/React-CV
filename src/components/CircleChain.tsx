@@ -17,7 +17,7 @@ export default class CircleChain extends Component<PropTypes> {
       let chain = [];
       for(let i = 0; i < this.props.length; i++){
         chain.push(
-            <DetailedCircle image={this.props.type} data={this.props.data[i]}/>
+            <DetailedCircle key={i} image={this.props.type} data={this.props.data[i]}/>
         );
       }
       return chain;
