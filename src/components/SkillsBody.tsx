@@ -142,7 +142,6 @@ export default class SkillsBody extends Component<propTypes, stateTypes> {
     }
 
     handleSkillSelect = (selected: any) => {
-        console.log(selected);
         this.setState({ selectedSkill: selected })
     }
 

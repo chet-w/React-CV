@@ -20,7 +20,6 @@ export default class SkillLogo extends Component<PropTypes> {
     }
 
     render() {
-        console.log(this.props);
         return (
             <React.Fragment>
                     {/* <div className="symbol">{this.getSymbol()}</div> */}

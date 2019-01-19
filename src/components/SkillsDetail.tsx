@@ -2,20 +2,45 @@ import React, { Component } from 'react';
 import SkillLogo from './SkillLogo';
 
 interface PropTypes {
-  selected: { 
-    name: string, symbol: string, level: number; details: string[] },
+  selected: {
+    name: string, symbol: string, level: number; details: string[]
+  },
 }
 
-const SkillDetail = (props: PropTypes) => {
-  
+interface StateTypes {
+  didUpdate: boolean;
+}
+
+class SkillDetail extends Component<PropTypes, StateTypes> {
+  constructor(props: PropTypes) {
+    super(props);
+    this.state = {
+      didUpdate: false
+    };
+  }
+
+  componentDidUpdate(prevProps: PropTypes) {
+    if (prevProps !== this.props) {
+      console.log(this.props, prevProps);
+      if (!this.state.didUpdate) { 
+        this.setState({ didUpdate: true }, () => {
+          setTimeout(() => this.setState({ didUpdate: false }), 500);
+        });  
+      }
+   
+    }
+  }
+
+  render() {
     return (
-      <React.Fragment>
-        <SkillLogo selected={props.selected}/>
+      <div className={this.state.didUpdate ? "fade-up" : ""}>
+        <SkillLogo selected={this.props.selected} />
         <div className="skills-details">
-            {props.selected.details.map(el => <p>{el}</p>)}
+          {this.props.selected.details.map(el => <p>{el}</p>)}
         </div>
-      </React.Fragment>
+      </div>
     )
+  }
 }
 
 export default SkillDetail;

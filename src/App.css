@@ -717,8 +717,8 @@ h1, h2, h3, h4, h5 {
 }
 
 @keyframes fade-up {
-  from { margin-top: 100% }
-  to { margin-top: 0 }
+  from { margin-top: 10%; opacity: 0; }
+  to { margin-top: 0; opacity: 1; }
 }
 
 
