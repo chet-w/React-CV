@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SkillLogo from './SkillLogo';
+import { Progress } from "antd";
 
 interface PropTypes {
   selected: {
@@ -19,15 +20,15 @@ class SkillDetail extends Component<PropTypes, StateTypes> {
     };
   }
 
+
   componentDidUpdate(prevProps: PropTypes) {
     if (prevProps !== this.props) {
-      console.log(this.props, prevProps);
-      if (!this.state.didUpdate) { 
+      if (!this.state.didUpdate) {
         this.setState({ didUpdate: true }, () => {
           setTimeout(() => this.setState({ didUpdate: false }), 500);
-        });  
+        });
       }
-   
+
     }
   }
 
@@ -35,6 +36,9 @@ class SkillDetail extends Component<PropTypes, StateTypes> {
     return (
       <div className={this.state.didUpdate ? "fade-up" : ""}>
         <SkillLogo selected={this.props.selected} />
+        <div className="selected-skill">
+          <Progress percent={this.props.selected.level * 10} showInfo={false} />
+        </div>
         <div className="skills-details">
           {this.props.selected.details.map(el => <p>{el}</p>)}
         </div>

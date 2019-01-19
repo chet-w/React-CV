@@ -6,6 +6,7 @@ import Section from "./components/Section";
 import "antd/dist/antd.css";
 import './App.css';
 import './App.light.css';
+import './App.media.css';
 
 export interface stateTypes {
   isDarkTheme: boolean;

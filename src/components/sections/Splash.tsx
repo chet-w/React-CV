@@ -23,9 +23,9 @@ class Splash extends React.Component<propTypes> {
         </div>
         <div className="switch-container">
           <div>
-            <span className={!this.props.isDark ? "accent-down" : ""}>Light mode</span>
+            <span className={!this.props.isDark ? "accent-down switch-title" : "switch-title"}>Light</span>
             <Switch defaultChecked onChange={(e) => this.props.handleThemeChange(e)}/> 
-            <span className={this.props.isDark ? "accent-down" : ""}>Dark mode</span>
+            <span className={this.props.isDark ? "accent-down switch-title" : ""}>Dark</span>
           </div>
         </div>
       </div>
