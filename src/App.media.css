@@ -1,4 +1,11 @@
 @media (max-width: 768px){
+    ::-webkit-scrollbar {
+        background: none;
+        width: 0
+      }
+      
+
+
     /* Splash */
     .splash .container {
         width: auto;

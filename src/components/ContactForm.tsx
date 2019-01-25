@@ -14,6 +14,17 @@ export interface stateTypes {
     formDisabled: boolean;
 }
 
+var API_KEY = 'key-c8a8c3f17ef1e96a76a60e8506a4eada';
+var DOMAIN = 'sandboxcf95410aeb0248c4b8bb31be96709f7a.mailgun.org';
+var mailgun = require('mailgun-js')({ apiKey: API_KEY, domain: DOMAIN });
+
+const data = {
+    from: 'Excited User <me@samples.mailgun.org>',
+    to: 'chethana96@gmail.com',
+    subject: 'mailgun test',
+    text: 'Testing some Mailgun awesomeness!'
+};
+
 class ContactForm extends React.Component<propTypes, stateTypes> {
 
     constructor(props: propTypes) {
@@ -29,6 +40,8 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
             selected: Math.round(Math.random() * 4),
             formDisabled: false
         };
+
+
     }
 
     handleSubmit = (e: any) => {
@@ -38,11 +51,17 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
                 this.setState({ formDisabled: true });
                 message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
 
+                mailgun.messages().send(data, (error: any, body: any) => {
+                    console.log(body);
+                });
+
             } else {
                 message.error("Looks like you've still got some fields to fill out");
             }
         });
     }
+
+
 
     render() {
         const { getFieldDecorator } = this.props.form;
