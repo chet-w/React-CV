@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Input, Button, message } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import TextArea from "antd/lib/input/TextArea";
-import { duration } from "moment";
 
 export interface propTypes extends FormComponentProps {
 
@@ -14,16 +13,6 @@ export interface stateTypes {
     formDisabled: boolean;
 }
 
-var API_KEY = 'key-c8a8c3f17ef1e96a76a60e8506a4eada';
-var DOMAIN = 'sandboxcf95410aeb0248c4b8bb31be96709f7a.mailgun.org';
-var mailgun = require('mailgun-js')({ apiKey: API_KEY, domain: DOMAIN });
-
-const data = {
-    from: 'Excited User <me@samples.mailgun.org>',
-    to: 'chethana96@gmail.com',
-    subject: 'mailgun test',
-    text: 'Testing some Mailgun awesomeness!'
-};
 
 class ContactForm extends React.Component<propTypes, stateTypes> {
 
@@ -50,11 +39,6 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
             if (!err) {
                 this.setState({ formDisabled: true });
                 message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
-
-                mailgun.messages().send(data, (error: any, body: any) => {
-                    console.log(body);
-                });
-
             } else {
                 message.error("Looks like you've still got some fields to fill out");
             }

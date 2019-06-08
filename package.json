@@ -8,8 +8,6 @@
     "@types/react": "16.7.18",
     "@types/react-dom": "16.0.11",
     "antd": "^3.11.6",
-    "dns": "^0.2.2",
-    "mailgun-js": "^0.22.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
