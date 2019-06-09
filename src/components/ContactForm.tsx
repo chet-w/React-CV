@@ -1,4 +1,5 @@
 import React from "react";
+import Recaptcha from "react-recaptcha";
 import { Form, Input, Button, message } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import TextArea from "antd/lib/input/TextArea";
@@ -11,6 +12,7 @@ export interface stateTypes {
     phOptions: { name: string, email: string, message: string }[];
     selected: number;
     formDisabled: boolean;
+    isRecaptchaChecked: boolean;
 }
 
 
@@ -27,7 +29,8 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
                 { name: "Gandalf the Grey", email: "gandalf@valinor.co.nz", message: "You shall not pass!" },
             ],
             selected: Math.round(Math.random() * 4),
-            formDisabled: false
+            formDisabled: false,
+            isRecaptchaChecked: false
         };
 
 
@@ -36,13 +39,22 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
     handleSubmit = (e: any) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
-            if (!err) {
+            if (!err && this.state.isRecaptchaChecked) {
                 this.setState({ formDisabled: true });
                 message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
             } else {
-                message.error("Looks like you've still got some fields to fill out");
+                 message.error("Looks like you've still got some fields to fill out");
             }
         });
+    }
+
+    handleRecaptcha = (response: any) => {
+        console.log(response);
+        if (response) {
+            this.setState({
+                isRecaptchaChecked: true
+            });
+        }
     }
 
 
@@ -87,6 +99,13 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
                         })(
                             <TextArea placeholder={placeholder.message} disabled={this.state.formDisabled} />
                         )}
+                    </Form.Item>
+                    <Form.Item className="recaptcha">
+                        <Recaptcha
+                            sitekey="6LfM4acUAAAAAAppmu1TBsOV6lHvFY2FE8H9BVSc"
+                            render="explicit"
+                            verifyCallback={this.handleRecaptcha}
+                        />,
                     </Form.Item>
 
                     <Form.Item>

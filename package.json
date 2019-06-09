@@ -12,6 +12,7 @@
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-recaptcha": "^2.3.10",
     "react-scripts": "2.1.2",
     "typescript": "3.2.2"
   },
@@ -29,5 +30,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/react-recaptcha": "^2.3.3"
+  }
 }
