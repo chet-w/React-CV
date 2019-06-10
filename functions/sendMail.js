@@ -1,9 +1,9 @@
-exports.handler = function(event, context, callback) {
+exports.handler = function (event, context, callback) {
 
-  console.log(event);
+  // send mail here
 
   callback(null, {
-  statusCode: 200,
-  body: "Hello, World"
+    statusCode: 200,
+    body: "Hello, World"
   });
 }
