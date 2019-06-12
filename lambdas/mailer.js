@@ -1,31 +1,42 @@
-const mg = require("nodemailer-mailgun-transport");
-// const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
+const smtpTransport = require('nodemailer-smtp-transport');
 
-// const MAILGUN_API = require("../config").MAILGUN_API;
-// const MAILGUN_KEY = require("../config").MAILGUN_KEY;
+const MAILGUN_PASS = require("../config").MAILGUN_PASS;
+const MAILGUN_USER = require("../config").MAILGUN_USER;
 
-// const sendMail = async function (email) {
-//     const auth = {
-//         auth: {
-//             api_key: MAILGUN_KEY,
-//             domain: MAILGUN_API
-//         }
-//     };
-//     const nodemailerMailgun = nodemailer.createTransport(mg(auth));
-//     nodemailerMailgun.sendMail({
-//         from: 'contact@chet-w.com',
-//         to: email,
-//         subject: `New enquiry at chet-w.com`,
-//         html: ``
-//     }, (err, info) => {
-//         if (err) {
-//             console.log(`Error: ${err}`);
-//         }
-//         else {
-//             console.log(`Response: ${info}`);
-//         }
-//     });
-// };
-console.log("hello")
+const transporter = nodemailer.createTransport(smtpTransport({
+    service: "Mailgun",
+    auth: {
+        user: MAILGUN_USER,
+        pass: MAILGUN_PASS
+    }
+}));
 
-module.exports = sendMail;
+var text = 'Email body goes here';
+
+var mailOptions = {
+    from: 'enquiries@chet-w.com',
+    to: 'chethana96@gmail.com',
+    subject: 'New enquiry from Chet-w.com',
+    text: text
+};
+
+transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+        // const response = {
+        //   statusCode: 500,
+        //   body: JSON.stringify({
+        //     error: error.message,
+        //   }),
+        // };
+        console.log(error);
+    } else {
+        console.log("Done!");
+    }
+    //   const response = {
+    //     statusCode: 200,
+    //     body: JSON.stringify({
+    //       message: `Email processed succesfully!`
+    //     }),
+    //   };
+});
