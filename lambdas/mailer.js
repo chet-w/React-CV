@@ -1,3 +1,6 @@
+
+const sendEmail = function() {
+
 const nodemailer = require("nodemailer");
 const smtpTransport = require('nodemailer-smtp-transport');
 
@@ -40,3 +43,7 @@ transporter.sendMail(mailOptions, function (error, info) {
     //     }),
     //   };
 });
+
+};
+
+module.exports = sendEmail;
