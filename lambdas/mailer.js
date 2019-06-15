@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 var text = 'Email body goes here';
-
+//
 var mailOptions = {
     from: 'enquiries@chet-w.com',
     to: 'chethana96@gmail.com',
