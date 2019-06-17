@@ -16,8 +16,8 @@ const sendEmail = function (target, callback) {
   // const MAILGUN_USER = require("../config").MAILGUN_USER
   
   // Prod configs
-  const MAILGUN_PASS = NET_MAILGUN_PASS;
-  const MAILGUN_USER = NET_MAILGUN_USER;
+  const MAILGUN_PASS = process.env.NET_MAILGUN_PASS;
+  const MAILGUN_USER = process.env.NET_MAILGUN_USER;
 
   const transporter = nodemailer.createTransport(smtpTransport({
       service: "Mailgun",
