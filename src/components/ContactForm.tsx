@@ -43,7 +43,7 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
         this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
             if (!err && this.state.isRecaptchaChecked) {
                 this.setState({ formDisabled: true });
-                axios.post(process.env.REACT_APP_MAILER, values).then(() => {
+                axios.post("https://www.chet-w.com/.netlify/functions/sendMail", values).then(() => {
                     message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
                 }).catch((err: any) => {
                     console.log(err);
