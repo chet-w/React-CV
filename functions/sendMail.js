@@ -2,16 +2,24 @@
 
 exports.handler = function (event, context, callback) {
 
-  const { values } = event.body;
+
+  // callback(null, {
+  //   statusCode: 200,
+  //   body: event.body
+  // });
 
   // send mail here
-  sendEmail(values, callback);
+  sendEmail(event.body, callback);
 }
 
-const sendEmail = function ({ name, email, message }, callback) {
+const sendEmail = function (body, callback) {
 
   const nodemailer = require("nodemailer");
   const smtpTransport = require('nodemailer-smtp-transport');
+
+  const parsed = JSON.parse(body);
+
+  const { name, email, message } = parsed.values;
 
   // Local configs
   // const MAILGUN_PASS = require("../config").MAILGUN_PASS
