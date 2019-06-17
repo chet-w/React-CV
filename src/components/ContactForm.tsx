@@ -1,5 +1,7 @@
 import React from "react";
 import Recaptcha from "react-recaptcha";
+import axios from "axios";
+
 import { Form, Input, Button, message } from 'antd';
 import { FormComponentProps } from 'antd/lib/form';
 import TextArea from "antd/lib/input/TextArea";
@@ -41,7 +43,12 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
         this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
             if (!err && this.state.isRecaptchaChecked) {
                 this.setState({ formDisabled: true });
-                message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
+                axios.post(process.env.REACT_APP_MAILER, values).then(() => {
+                    message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
+                }).catch((err: any) => {
+                    console.log(err);
+                })
+                
             } else {
                  message.error("Looks like you've still got some fields to fill out");
             }

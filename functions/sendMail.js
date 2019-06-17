@@ -2,11 +2,13 @@
 
 exports.handler = function (event, context, callback) {
 
+  const { values } = event.body;
+
   // send mail here
-  sendEmail("chethana96@gmail.com", callback);
+  sendEmail(values, callback);
 }
 
-const sendEmail = function (target, callback) {
+const sendEmail = function ({ name, email, message }, callback) {
 
   const nodemailer = require("nodemailer");
   const smtpTransport = require('nodemailer-smtp-transport');
@@ -33,7 +35,19 @@ const sendEmail = function (target, callback) {
       from: 'enquiries@chet-w.com',
       to: "chethana96@gmail.com",
       subject: 'New enquiry from Chet-w.com',
-      text: text
+      text: `
+      Hi Chet,
+      
+      You just got a new message on your website from ${name}. This was their message:
+
+      ${message}.
+
+      To here's the contact email they gave us: ${email}.
+
+      Best wishes,
+      Virtual Chet
+
+      `
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
