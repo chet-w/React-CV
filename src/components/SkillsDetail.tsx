@@ -35,7 +35,7 @@ class SkillDetail extends Component<PropTypes, StateTypes> {
   render() {
     return (
       <div className={this.state.didUpdate ? "fade-up" : ""}>
-        <SkillLogo selected={this.props.selected} />
+        {this.props.selected.name != "" && <SkillLogo selected={this.props.selected} />}
         <div className="selected-skill">
           <Progress percent={this.props.selected.level * 10} showInfo={false} />
         </div>

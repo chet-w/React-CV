@@ -231,6 +231,7 @@ h1, h2, h3, h4, h5 {
     align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+  margin-top: 20px;
 } 
 
 .section .profile-item {
@@ -263,6 +264,11 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: row;
   justify-content: left;
+}
+
+.prelude {
+  margin: 3rem 0;
+  font-size: 1rem;
 }
 
 .detailed-text .timeframe {
