@@ -44,7 +44,7 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
             if (!err) {
                 this.setState({ formDisabled: true });
                 
-                axios.post("/sendMail", values).then(() => {
+                axios.post("https://www.chet-w.com/.netlify/functions/sendMail", values).then(() => {
                     message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
                 }).catch((err: any) => {
                     console.log(err);

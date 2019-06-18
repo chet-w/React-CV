@@ -38,6 +38,5 @@
   ],
   "devDependencies": {
     "@types/react-recaptcha": "^2.3.3"
-  },
-  "proxy": "http://localhost:9000"
+  }
 }
