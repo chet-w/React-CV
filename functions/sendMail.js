@@ -2,14 +2,8 @@
 
 exports.handler = function (event, context, callback) {
 
-
-  callback(null, {
-    statusCode: 200,
-    body: event.body
-  });
-
   // send mail here
-  // sendEmail(event.body, callback);
+  sendEmail(event.body, callback);
 }
 
 const sendEmail = function (body, callback) {
@@ -19,7 +13,7 @@ const sendEmail = function (body, callback) {
 
   const parsed = JSON.parse(body);
 
-  const { name, email, message } = parsed.values;
+  const { name, email, message } = parsed;
 
   // Local configs
   // const MAILGUN_PASS = require("../config").MAILGUN_PASS

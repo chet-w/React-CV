@@ -41,9 +41,10 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
     handleSubmit = (e: any) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err: any, values: { name: string, email: string, message: string }) => {
-            if (!err && this.state.isRecaptchaChecked) {
+            if (!err) {
                 this.setState({ formDisabled: true });
-                axios.post("https://www.chet-w.com/.netlify/functions/sendMail", values).then(() => {
+                
+                axios.post("/sendMail", values).then(() => {
                     message.success(`Thanks for the message, ${values.name}! I'll be in contact soon.`);
                 }).catch((err: any) => {
                     console.log(err);
@@ -55,14 +56,6 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
         });
     }
 
-    handleRecaptcha = (response: any) => {
-        console.log(response);
-        if (response) {
-            this.setState({
-                isRecaptchaChecked: true
-            });
-        }
-    }
 
 
 
@@ -107,14 +100,6 @@ class ContactForm extends React.Component<propTypes, stateTypes> {
                             <TextArea placeholder={placeholder.message} disabled={this.state.formDisabled} />
                         )}
                     </Form.Item>
-                    <Form.Item className="recaptcha">
-                        <Recaptcha
-                            sitekey="6LfM4acUAAAAAAppmu1TBsOV6lHvFY2FE8H9BVSc"
-                            render="explicit"
-                            verifyCallback={this.handleRecaptcha}
-                        />,
-                    </Form.Item>
-
                     <Form.Item>
                         <Button type="primary" htmlType="submit" disabled={this.state.formDisabled} >Submit</Button>
                     </Form.Item>
