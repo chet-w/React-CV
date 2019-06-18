@@ -3,13 +3,13 @@
 exports.handler = function (event, context, callback) {
 
 
-  // callback(null, {
-  //   statusCode: 200,
-  //   body: event.body
-  // });
+  callback(null, {
+    statusCode: 200,
+    body: event.body
+  });
 
   // send mail here
-  sendEmail(event.body, callback);
+  // sendEmail(event.body, callback);
 }
 
 const sendEmail = function (body, callback) {
