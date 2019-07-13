@@ -36,7 +36,7 @@ export default class Skills extends Component<propsTypes, stateTypes> {
           </p>
         </div>
         <div className="section-body">
-          <div className="options">No so Technicial<Switch defaultChecked onChange={(e) => this.setState({ showTechnical: e }) } />Technicial</div>
+          <div className="options">Not so Technicial<Switch defaultChecked onChange={(e) => this.setState({ showTechnical: e }) } />Technicial</div>
           <SkillsBody showTechnicial={this.state.showTechnical}/>
         </div>
         <div className="hr-line"></div>

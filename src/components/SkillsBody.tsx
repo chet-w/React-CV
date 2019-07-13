@@ -39,7 +39,7 @@ export default class SkillsBody extends Component<propTypes, stateTypes> {
                         like React and Angular.`
                     ]},
                     { name: "TypeScript", symbol: "Ts", level: 9, details: [
-                        `I use TypeScript almosy much as JavaScript recently.`,
+                        `I use TypeScript almost much as JavaScript recently.`,
                         `Coming from three years of using Java in uni, TypeScript seemed like a logical and familiar step in web development. 
                         I've used TypeScript increasingly in my projects whether it be in React (like this app), Angular, or the Ionic framework.`,
                         `I try to use TypeScript in most of my projects to guarentee type-safety rather than JavaScript.`
