@@ -6,7 +6,7 @@ html, body {
   color: #ddd;
   background: #111;
   overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 ::-webkit-scrollbar {
@@ -148,8 +148,12 @@ h1, h2, h3, h4, h5 {
 
 .splash .container h1 {
   margin: 0;
-  font-size: 3rem; 
-  
+  font-size: 3.2rem;
+  line-height: 3rem;
+}
+
+.splash .container h2 {
+  font-size: 1.6rem;
 }
 
 .splash .switch-container {
