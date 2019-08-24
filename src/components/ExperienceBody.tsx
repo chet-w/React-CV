@@ -26,7 +26,11 @@ export class ExperienceBody extends Component<{}, stateTypes> {
         details: [`At Epi-Interactive I worked in a small team of experienced developers to create data-rich web apps
                   primarily using R and the Shiny framework, while also incorperating core web fundamentals in JavaScript and CSS.`,
                   `I worked both individually and in a team to create applications for companies like the Ministry of Health and 
-                  Health Promotion Agency to visualise vast amounts of data through engaging dashboards.`
+                  Health Promotion Agency to visualise vast amounts of data through engaging dashboards, as well as e-learning applications used 
+                  in universities across Australia.`,
+                  `A key part of my role was teaching, where I would write and deliver my own content in trainings, worshops, and content to groups 
+                  of varying sizes and skill levels. I'm a great communicator and love talking about what programming so I was able to pick up this 
+                  new role quickly and excel.`
                 ],
         skills: [
           "R", "Shiny", "Data Manipulation", "JavaScript", "HTML/CSS", "Git", "SQL", "Teamwork"
@@ -59,12 +63,16 @@ export class ExperienceBody extends Component<{}, stateTypes> {
     ],
       schools: [{
         title: "Victoria University of Wellington",
-        position: "Bachelor of Science, Major in Computer Science, Minor in Information Systems",
+        position: "Bachelor of Science, Major in Computer Science",
         timeframe: "March 2015 - November 2018",
         details: [`Studying at Victoria gave me the main skills I carry with me for software.`,
         `Here I took courses to grow a deep understanding of many aspects of development such as 
         OOP, algorithms and data structures, database architecture, networking, Git, client-server applications,
-        mobile development, and user interface and user experience design.`
+        mobile development, and user interface and user experience design.`,
+        `While primarily using Java, I taught myself JavaScript and learnt to be proficient in my selection of front-end 
+        frameworks.`,
+        `I formally graduated in May 2019 with an excellent understanding of my studied areas of computer science, already 
+        applying these skills as a junior developer.`
         ],
         skills: ["JavaScript", "TypeScript", "Java", "SQL", "Git", "Teamwork", "Communication", "Angular" ]
       },

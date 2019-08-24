@@ -9,8 +9,9 @@ export default class Experience extends Component {
         <h1 className="title">Experience</h1>
         </div>
         <div className="prelude">
-          Here's a quick summary of my work so far. Click on a circle to get some more information about my role, 
-          the skills I used, and how it's helped me out.
+          <p>A quick summary of my work so far.</p>
+          <p><span className="accent-down">Click on a circle</span> to get some more information about my role, 
+          the skills I used, and how it's helped me out.</p>
         </div>
         <div className="section-body experience-body">
         <ExperienceBody />
