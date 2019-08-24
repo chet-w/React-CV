@@ -115,8 +115,10 @@ export default class SkillsBody extends Component<propTypes, stateTypes> {
                 { name: "Communication", symbol: "Co", level: 9, details: [`
                 Communication is skill that I am very strong in.`, `
                 Through working in small and large teams I've developed great communication skills which help me with presentations, 
-                get my ideas across, and in turn hear other opinions as well.`, `
-                Five years of work at Noel Leeming help me develop my skills for listening to requirements, articulating technical terms 
+                get my ideas across, and in turn hear other opinions as well.`,
+                `Part of my role at Epi-interactive was in teaching, where I would create and deliver my own content about programming, data visualisation 
+                and data management to groups of varying size and skill levels via workshops and webinars. `,
+                `Additionally, five years of work at Noel Leeming help me develop my skills for listening to requirements, articulating technical terms 
                 to create understanding, and dealing with conflicting opinions.`] },
                 { name: "Problem Solving", symbol: "Ps", level: 8, details: [`
                 I've always been very intersted in solving problems. Whether it was at Noel Leeming trying to find the right product for someone 

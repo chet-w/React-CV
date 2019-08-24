@@ -31,7 +31,7 @@ export default class Skills extends Component<propsTypes, stateTypes> {
         <div className="prelude">
           <p>So what am I actually good at? Front-end work is what I'm really passionate about, 
           but I can still definitely hold my own on the server-side. </p>
-          <p>Click on a skill to get some more details about how I use it or flick the switch to 
+          <p><span className="accent-down">Click on a skill</span> to get some more details about how I use it or flick the switch to 
             head over to my less coder-y and more professional skills.
           </p>
         </div>
