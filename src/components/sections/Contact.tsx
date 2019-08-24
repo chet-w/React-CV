@@ -16,7 +16,13 @@ class Contact extends Component {
               <WrappedContactForm />
               <ContactItems />
             </div>
-
+          </div>
+          <div className="signoff">
+            <p>Thanks for checking out my website!</p> 
+            <p>Any suggestions on how I can make it better?
+               Maybe open an issue on <a className="accent-down" href="https://github.com/chet-w/React-CV/" target="_blank" rel="noopener noreferrer">Github </a>  
+                or use the contact form 👆 to get in touch.  
+            </p>
           </div>
           <div className="hr-line"></div>
           <div className="hr-line" style={{ margin: "0 auto 10%" }}></div>
