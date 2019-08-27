@@ -25,12 +25,16 @@ export default class Projects extends Component<PropTypes, StateTypes> {
     this.state = {
       projects: [
         {
-          name: "Kupe Data Explorer",
+          name: "The Kupe Clone",
           key: "kupe",
           details: [
-            `Test!!`
+            `Kupe Data Explorer was originally I project that I had worked on for the Health Promotion Association while I was working at Epi-interactive using Shiny.`,
+            `I loved the design but development in Shiny limited our ability to nail the fluid user experience we were looking for. The Kupe Clone 
+            was my personal project made as a remake of the original made with React (using Gatsby) and GraphQL, focussed on delivering a seamless 
+            user experience and not compromising on features. It also incorporates Progressive Web App features such as offline usage, a downloadable app, and exellent performance.`,
+            `The Clone, like the original, is a data visualisation dashboard to show trends in how New Zealanders see various health factors in the world around them.`
           ],
-          tech: [],
+          tech: ["React", "Gatsby", "GraphQL", "JavaScript", "CSS", "PWA"],
           dir: "../img/projects/kupe/",
           size: 6,
           laptop: 1,
