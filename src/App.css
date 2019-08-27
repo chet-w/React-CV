@@ -6,6 +6,8 @@ html, body {
   color: #ddd;
   background: #111;
   overflow-x: hidden;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
   /* overflow-y: auto; */
 }
 
