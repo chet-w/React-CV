@@ -23,7 +23,20 @@ export default class Projects extends Component<PropTypes, StateTypes> {
   constructor(props: PropTypes) {
     super(props);
     this.state = {
-      projects: [{
+      projects: [
+        {
+          name: "Kupe Data Explorer",
+          key: "kupe",
+          details: [
+            `Test!!`
+          ],
+          tech: [],
+          dir: "../img/projects/kupe/",
+          size: 6,
+          laptop: 1,
+          mobile: 5
+        },
+        {
         name: "Victoria Business School",
         key: "vbs",
         details: [`
