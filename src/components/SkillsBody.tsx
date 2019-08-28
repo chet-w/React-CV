@@ -44,12 +44,14 @@ export default class SkillsBody extends Component<propTypes, stateTypes> {
                         I've used TypeScript increasingly in my projects whether it be in React (like this app), Angular, or the Ionic framework.`,
                         `I try to use TypeScript in most of my projects to guarentee type-safety rather than JavaScript.`
                     ] },
-                    { name: "React", symbol: "Re", level: 8, details: [
+                    { name: "React", symbol: "Re", level: 9, details: [
                             `React is my preferred library for front-end work. It's lightweight, modern, and makes web development easier with components.`,
-                            `I've used React mainly on the web platform to make projects like this and a few other small apps, as well as React Native to create 
-                            a basic Pokedex app for a uni project.`
+                            `I've used React many times in my own personal projects for a range of different scenarios such as for static sites, e-commerce applications, 
+                            and data visualisation dashboards. I'm experienced and comfortable using both Gastby and Next.js as frameworks to create static or server-rendered 
+                            applications as required.`,
+                            `I have some additional experience in React Native that I gained from a few university projects.`
                     ] },
-                    { name: "Angular", symbol: "Ng", level: 8, details: [
+                    { name: "Angular", symbol: "Ng", level: 7, details: [
                         `I've used Angular for a few of my larger projects. Firstly, I've used AngularJS for creating a lightweight LMS for a uni project and 
                         Angular2 for creating a more modern and dynamic website for my father's company.`,
                         `I'm familar with both variations of the framework despite how different they are, as well as the Angular-based Ionic framework which I 

@@ -26,6 +26,12 @@ class MoreImages extends Component<propTypes, stateTypes> {
         }
     }
 
+    componentDidMount() {
+        addEventListener("keypress", () => {
+            
+        })
+    }
+
     getImages = () => {
         let imgs:JSX.Element[] = [];
 
